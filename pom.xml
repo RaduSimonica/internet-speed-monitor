@@ -14,7 +14,7 @@
 	<name>Internet Speed</name>
 	<description>A speedtest.net client to periodically check ISP speed</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
