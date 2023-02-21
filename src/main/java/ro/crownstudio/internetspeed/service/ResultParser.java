@@ -13,7 +13,7 @@ public class ResultParser {
         SpeedResult result;
         Process process = null;
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("sudo speedtest -f json-pretty");
+            ProcessBuilder processBuilder = new ProcessBuilder("speedtest", "-f json-pretty");
             process = processBuilder.start();
             process.waitFor();
 
