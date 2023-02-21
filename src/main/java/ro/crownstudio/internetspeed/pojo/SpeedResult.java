@@ -34,7 +34,7 @@ public class SpeedResult {
 
 	@SerializedName("packetLoss")
 	@Column(name = "packet_loss", updatable = false, nullable = false)
-	private Integer packetLoss;
+	private Double packetLoss;
 
 	@SerializedName("upload")
 	@OneToOne(cascade = CascadeType.PERSIST)
