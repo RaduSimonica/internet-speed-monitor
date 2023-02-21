@@ -17,6 +17,8 @@ public class ResultParser {
             process = processBuilder.start();
             process.waitFor();
 
+            String processResult = parseInputStream(process.getInputStream());
+            System.out.println(processResult);
             result = new Gson().fromJson(parseInputStream(process.getInputStream()), SpeedResult.class);
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
