@@ -18,8 +18,8 @@ public class ResultParser {
         Process process = null;
         try {
             LOGGER.info("Creating command");
-            ProcessBuilder processBuilder = new ProcessBuilder("speedtest", "-f json-pretty");
-            process = processBuilder.start();
+            Runtime runtime = Runtime.getRuntime();
+            process = runtime.exec(new String[]{"speedtest", "-f json-pretty"});
             LOGGER.info("Starting process builder");
             process.waitFor();
 
