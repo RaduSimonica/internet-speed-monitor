@@ -23,9 +23,12 @@ public class ResultParser {
             LOGGER.info("Starting process builder");
             process.waitFor();
 
-            String processResult = parseInputStream(process.getOutputStream());
+            String processResult = parseInputStream(process.getInputStream());
             LOGGER.info("Got result from process:");
             LOGGER.info("-> " + processResult);
+
+            String errors = parseInputStream(process.getErrorStream());
+            LOGGER.info("errors -> " + errors);
 
             result = new Gson().fromJson(processResult, SpeedResult.class);
             LOGGER.info("Parsed as: " + result);
@@ -41,9 +44,6 @@ public class ResultParser {
     }
 
     private String parseInputStream(InputStream input) {
-        if (input == null) {
-            throw new RuntimeException("INPUT STREAM NULL!!");
-        }
         StringBuilder builder = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
