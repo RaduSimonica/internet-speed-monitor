@@ -23,7 +23,7 @@ public class ResultParser {
             LOGGER.info("Starting process builder");
             process.waitFor();
 
-            String processResult = parseInputStream(process.getInputStream());
+            String processResult = parseInputStream(process.getOutputStream());
             LOGGER.info("Got result from process:");
             LOGGER.info("-> " + processResult);
 
@@ -41,6 +41,9 @@ public class ResultParser {
     }
 
     private String parseInputStream(InputStream input) {
+        if (input == null) {
+            throw new RuntimeException("INPUT STREAM NULL!!");
+        }
         StringBuilder builder = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
