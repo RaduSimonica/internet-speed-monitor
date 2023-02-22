@@ -31,20 +31,20 @@ pipeline {
 
         stage("Deploy JAR") {
             steps {
-                sh "sudo cp target/*.jar $jarPath"
+                sh "cp target/*.jar $jarPath"
             }
         }
 
         stage("Register service") {
             steps {
-                sh "sudo sed -i 's+ExecStart=+ExecStart=java -jar $jarPath+g' .service"
-                sh "sudo cp .service /etc/systemd/system/$serviceName.service"
+                sh "sed -i 's+ExecStart=+ExecStart=java -jar $jarPath+g' .service"
+                sh "cp .service /etc/systemd/system/$serviceName.service"
             }
         }
 
         stage("Start service") {
             steps {
-                sh "sudo systemctl start serviceName.service"
+                sh "systemctl start serviceName.service"
             }
         }
     }
