@@ -19,7 +19,7 @@ pipeline {
         stage("Clone repository") {
             steps {
                 cleanWs()
-                sh "git clone -branch master https://github.com/RaduSimonica/internet-speed-monitor.git"
+                sh "git clone --branch master https://github.com/RaduSimonica/internet-speed-monitor.git"
             }
         }
 
