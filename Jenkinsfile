@@ -9,7 +9,7 @@ pipeline {
             description: "The name of the service."
         )
         string(
-            name: "path",
+            name: "jarPath",
             defaultValue: "/home/pi/services/internet-speed-monitor.jar",
             description: "Path and file name for the Internet Speed Monitoring service."
         )
@@ -31,13 +31,13 @@ pipeline {
 
         stage("Deploy JAR") {
             steps {
-                sh "sudo cp target/*.jar $path"
+                sh "sudo cp target/*.jar $jarPath"
             }
         }
 
         stage("Register service") {
             steps {
-                sh "sudo sed -i 's+ExecStart=+ExecStart=java -jar $path+g' .service"
+                sh "sudo sed -i 's+ExecStart=+ExecStart=java -jar $jarPath+g' .service"
                 sh "sudo cp .service /etc/systemd/system/$serviceName.service"
             }
         }
