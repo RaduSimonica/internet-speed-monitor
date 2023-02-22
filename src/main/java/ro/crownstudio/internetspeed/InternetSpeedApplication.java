@@ -38,8 +38,8 @@ public class InternetSpeedApplication implements ApplicationRunner {
 
 			SpeedResult result = resultParser.getSpeedResult();
 
-			LOGGER.info("Download speed: " + result.getDownload().getBandwidth() / (1024*1024) / 0.125);
-			LOGGER.info("Upload speed: " + result.getUpload().getBandwidth() / (1024*1024) / 0.125);
+			LOGGER.info("Download speed: " + result.getDownload().getBandwidth() / 125000);
+			LOGGER.info("Upload speed: " + result.getUpload().getBandwidth() / 125000);
 			LOGGER.info("Ping: " + result.getPing().getHigh());
 
 			repository.save(result);
