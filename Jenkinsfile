@@ -18,20 +18,20 @@ pipeline {
 
         stage("Deploy JAR") {
             steps {
-                sh "cp target/*.jar /home/pi/services/internet-speed-monitor.jar"
+                sh "sudo cp target/*.jar /home/pi/services/internet-speed-monitor.jar"
             }
         }
 
         stage("Register service") {
             steps {
-                sh "cp .service /etc/systemd/system/internet-speed-monitor.service"
-                sh "systemctl enable internet-speed-monitor.service"
+                sh "sudo cp .service /etc/systemd/system/internet-speed-monitor.service"
+                sh "sudo systemctl enable internet-speed-monitor.service"
             }
         }
 
         stage("Start service") {
             steps {
-                sh "systemctl start internet-speed-monitor.service"
+                sh "sudo systemctl start internet-speed-monitor.service"
             }
         }
     }
