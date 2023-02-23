@@ -37,7 +37,7 @@ pipeline {
 
         stage("Register service") {
             steps {
-                sh "sed -i 's+ExecStart=+ExecStart=java -jar $jarPath+g' .service"
+                sh "sed -i 's+ExecStart=+\"ExecStart=java -jar $jarPath\"+g' .service"
                 sh "cp .service /etc/systemd/system/$serviceName.service"
             }
         }
