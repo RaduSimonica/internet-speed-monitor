@@ -60,6 +60,6 @@ public class SpeedResult {
 	private NetworkInterface networkInterface;
 
 	@SerializedName("timestamp")
-	@Column(name = "timestamp", updatable = false, nullable = false)
+	@Column(name = "timestamp", updatable = false, nullable = false, columnDefinition= "TIMESTAMP WITH TIME ZONE")
 	private Timestamp timestamp;
 }
