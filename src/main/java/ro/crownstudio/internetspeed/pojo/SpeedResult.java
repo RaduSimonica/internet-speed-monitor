@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.Getter;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Entity(name = "SpeedResult")
@@ -61,5 +61,5 @@ public class SpeedResult {
 
 	@SerializedName("timestamp")
 	@Column(name = "timestamp", updatable = false, nullable = false)
-	private Date timestamp;
+	private Timestamp timestamp;
 }
