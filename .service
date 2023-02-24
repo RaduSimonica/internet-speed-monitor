@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=java -jar /home/pi/services/internet-speed-monitor.jar
+EnvironmentFile=/etc/internet-speed-monitor/internet-speed-monitor.conf
 Restart=always
 User=pi
 
