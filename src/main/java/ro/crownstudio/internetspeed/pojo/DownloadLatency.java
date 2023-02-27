@@ -11,7 +11,7 @@ public class DownloadLatency {
 
 	@Id
 	@SequenceGenerator(name = "download_latency_sequence", sequenceName = "download_latency_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "download_latency_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "download_latency_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 

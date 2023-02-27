@@ -11,7 +11,7 @@ public class NetworkInterface {
 
 	@Id
 	@SequenceGenerator(name = "network_interface_sequence", sequenceName = "network_interface_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "network_interface_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "network_interface_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 

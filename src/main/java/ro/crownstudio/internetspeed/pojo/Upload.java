@@ -11,7 +11,7 @@ public class Upload {
 
 	@Id
 	@SequenceGenerator(name = "upload_sequence", sequenceName = "upload_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "upload_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "upload_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 

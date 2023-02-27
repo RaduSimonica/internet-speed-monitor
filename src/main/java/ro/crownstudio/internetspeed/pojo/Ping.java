@@ -11,7 +11,7 @@ public class Ping {
 
 	@Id
 	@SequenceGenerator(name = "ping_sequence", sequenceName = "ping_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "ping_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ping_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 
