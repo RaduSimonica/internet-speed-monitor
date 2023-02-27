@@ -5,13 +5,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 @Getter
-@Entity(name = "Latency")
-@Table(name = "latency")
-public class Latency {
+@Entity(name = "UploadLatency")
+@Table(name = "upload_latency")
+public class UploadLatency {
 
 	@Id
-	@SequenceGenerator(name = "latency_sequence", sequenceName = "latency_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "latency_sequence")
+	@SequenceGenerator(name = "upload_latency_sequence", sequenceName = "upload_latency_sequence", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "upload_latency_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 

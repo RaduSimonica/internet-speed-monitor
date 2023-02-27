@@ -30,5 +30,5 @@ public class Upload {
 	@SerializedName("latency")
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "id")
-	private Latency latency;
+	private UploadLatency latency;
 }
