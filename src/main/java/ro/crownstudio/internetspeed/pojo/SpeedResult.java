@@ -13,7 +13,7 @@ public class SpeedResult {
 
 	@Id
 	@SequenceGenerator(name = "speed_result_sequence", sequenceName = "speed_result_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "speed_result_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "speed_result_sequence")
 	@Column(name = "id", updatable = false)
 	private Long id;
 

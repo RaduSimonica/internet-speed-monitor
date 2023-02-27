@@ -11,7 +11,7 @@ public class Server {
 
 	@Id
 	@SequenceGenerator(name = "server_sequence", sequenceName = "server_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "server_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "server_sequence")
 	@Column(name = "id", updatable = false)
 	private Long serverId;
 

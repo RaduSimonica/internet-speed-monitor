@@ -11,7 +11,7 @@ public class Result {
 
 	@Id
 	@SequenceGenerator(name = "result_sequence", sequenceName = "result_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "result_sequence")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "result_sequence")
 	@Column(name = "id", updatable = false)
 	private Long resultId;
 
